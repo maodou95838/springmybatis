@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+	<insert id="insertUser" parameterType="User">
+		 insert into nsl_yh (id, name, user_login_id, cellphone, password1 )
+    	 values (#{id}, #{name}, #{userLoginId},	#{cellphone}, #{password1} )
+	</insert>
+	
+	<select id="selectByPrimaryKey" resultType="User" parameterType="java.lang.Integer" >
+	    select  
+	    	id,
+	    	name,
+	    	user_login_id userLoginId,
+	    	cellphone,
+	    	password1
+	    from nsl_yh
+	    where id = #{id}
+  </select>
+	
+</mapper>
+
+
